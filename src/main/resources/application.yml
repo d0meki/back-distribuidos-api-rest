@@ -3,9 +3,9 @@ spring:
   application:
     name: todo-app
   datasource:
-    url: jdbc:mysql://localhost:3306/banco
-    username: root
-    password: 
+    url: jdbc:mysql://${MYSQL_HOST:mysql-domeki.alwaysdata.net}:3306/domeki_banco
+    username: domeki
+    password: irascema
     driver-class-name: com.mysql.cj.jdbc.Driver
   h2:
     console:
