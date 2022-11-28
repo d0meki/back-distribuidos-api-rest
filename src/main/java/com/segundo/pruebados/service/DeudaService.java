@@ -1,5 +1,6 @@
 package com.segundo.pruebados.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,4 +36,9 @@ public class DeudaService implements IDeudaService {
         return data.findById(deuda.getId());
     }
 
+    @Override
+    public List<Deuda> listar() {
+        return (List<Deuda>) data.findAll();
+    }
+    
 }

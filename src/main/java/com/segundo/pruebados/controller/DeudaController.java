@@ -1,7 +1,10 @@
 package com.segundo.pruebados.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,5 +23,11 @@ public class DeudaController {
     public ResponseEntity<Deuda> createPersona(@RequestBody Deuda deuda) {
          return service.create(deuda);
     }
+    @GetMapping("/listardeudas")
+    public List<Deuda> getDeudas(){
+        List<Deuda>deudas = service.listar();
+        return deudas;
+    }
+
 
 }
