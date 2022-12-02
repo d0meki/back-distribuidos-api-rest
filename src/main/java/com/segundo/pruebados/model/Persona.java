@@ -13,16 +13,18 @@ public class Persona {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+    private String ci;
     private String telefono;
 
     public Persona() {
 
     }
 
-    public Persona(int id, String name, String telefono) {
+    public Persona(int id, String name, String telefono,String ci) {
         super();
         this.id = id;
         this.name = name;
+        this.ci = ci;
         this.telefono = telefono;
     }
 
@@ -48,5 +50,13 @@ public class Persona {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public String getCi() {
+        return ci;
+    }
+
+    public void setCi(String ci) {
+        this.ci = ci;
     }
 }

@@ -13,17 +13,17 @@ public class DetalleDeuda {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int deuda_id;
-    private String detalle_deuda;
+    private int concepto_id;
     private float monto;
 
     public DetalleDeuda() {
 
     }
 
-    public DetalleDeuda(int id, int deuda_id, String detalle_deuda, float monto) {
+    public DetalleDeuda(int id, int deuda_id, float monto,int concepto_id) {
         this.id = id;
         this.deuda_id = deuda_id;
-        this.detalle_deuda = detalle_deuda;
+        this.concepto_id = concepto_id;
         this.monto = monto;
     }
 
@@ -43,20 +43,20 @@ public class DetalleDeuda {
         this.deuda_id = deuda_id;
     }
 
-    public String getDetalle_deuda() {
-        return detalle_deuda;
-    }
-
-    public void setDetalle_deuda(String detalle_deuda) {
-        this.detalle_deuda = detalle_deuda;
-    }
-
     public float getMonto() {
         return monto;
     }
 
     public void setMonto(float monto) {
         this.monto = monto;
+    }
+
+    public int getConcepto_id() {
+        return concepto_id;
+    }
+
+    public void setConcepto_id(int concepto_id) {
+        this.concepto_id = concepto_id;
     }
 
 }

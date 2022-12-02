@@ -1,5 +1,7 @@
 package com.segundo.pruebados.model;
 
+import java.sql.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,6 +16,8 @@ public class Deuda {
     private int id;
     private int persona_id;
     private String titulo;
+    private Date fecha_creacion;
+    private Date fecha_vencimiento;
     private float total;
     private boolean pagado;
 
@@ -22,11 +26,13 @@ public class Deuda {
 
     }
 
-    public Deuda(int id, int persona_id, String titulo, float total) {
+    public Deuda(int id, int persona_id, String titulo, float total,Date fecha_creacion,Date fecha_vencimiento) {
         this.id = id;
         this.persona_id = persona_id;
         this.titulo = titulo;
         this.total = total;
+        this.fecha_creacion = fecha_creacion;
+        this.fecha_vencimiento = fecha_vencimiento;
         this.pagado = false;
     }
 
@@ -68,6 +74,22 @@ public class Deuda {
 
     public void setPagado(boolean pagado) {
         this.pagado = pagado;
+    }
+
+    public Date getFecha_creacion() {
+        return fecha_creacion;
+    }
+
+    public void setFecha_creacion(Date fecha_creacion) {
+        this.fecha_creacion = fecha_creacion;
+    }
+
+    public Date getFecha_vencimiento() {
+        return fecha_vencimiento;
+    }
+
+    public void setFecha_vencimiento(Date fecha_vencimiento) {
+        this.fecha_vencimiento = fecha_vencimiento;
     }
 
 }

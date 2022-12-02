@@ -5,24 +5,23 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.segundo.pruebados.InterfaceService.IPagoService;
-import com.segundo.pruebados.Interfaces.IPago;
-import com.segundo.pruebados.model.Pago;
+import com.segundo.pruebados.InterfaceService.IConceptoService;
+import com.segundo.pruebados.Interfaces.IConcepto;
+import com.segundo.pruebados.model.Concepto;
 
 @Service
-public class PagoService implements IPagoService{
+public class ConceptoService implements IConceptoService{
 
     @Autowired
-    private IPago dataPago;
+    private IConcepto data;
 
     @Override
-    public ResponseEntity<Pago> create(Pago pago, int id) {
+    public ResponseEntity<Concepto> create(Concepto concepto) {
         try {
-            Pago p = dataPago.save(pago);
-            return new ResponseEntity<Pago>(p, HttpStatus.CREATED);
+            return new ResponseEntity<Concepto>(data.save(concepto), HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    
+
 }

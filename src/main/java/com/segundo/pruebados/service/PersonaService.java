@@ -37,7 +37,6 @@ public class PersonaService implements IPersonaService {
         data.save(_persona);
         return data.findById(id);
     }
-
     @Override
     public Optional<Persona> getPersonaId(int id) {
         return data.findById(id);
