@@ -40,6 +40,10 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    @GetMapping(value = "/persona-ci/{ci}")
+    public ResponseEntity<List<Persona>> getPersonaCI(@PathVariable("ci") String ci){
+        return this.service.buscarPorCi(ci);
+    }
     @PostMapping(value = "/crearpersona", consumes = {"application/json"}) 
     public ResponseEntity<Persona> createPersona(@RequestBody Persona persona) {
          Persona userCreated = service.create(persona);

@@ -26,14 +26,14 @@ public class Deuda {
 
     }
 
-    public Deuda(int id, int persona_id, String titulo, float total,Date fecha_creacion,Date fecha_vencimiento) {
+    public Deuda(int id,Date fecha_creacion,Date fecha_vencimiento,boolean pagado, int persona_id, String titulo, float total) {
         this.id = id;
         this.persona_id = persona_id;
         this.titulo = titulo;
         this.total = total;
         this.fecha_creacion = fecha_creacion;
         this.fecha_vencimiento = fecha_vencimiento;
-        this.pagado = false;
+        this.pagado = pagado;
     }
 
     public int getId() {

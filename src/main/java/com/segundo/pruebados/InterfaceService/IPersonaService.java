@@ -10,6 +10,7 @@ import com.segundo.pruebados.model.Persona;
 public interface IPersonaService {
     public List<Persona> listar();
     public Optional<Persona> getPersonaId(int id);
+    public ResponseEntity<List<Persona>> buscarPorCi(String ci);
     public Persona create(Persona persona);
     public Optional<Persona> editar(int id,Persona persona);
     public ResponseEntity<HttpStatus> eliminar(int id);

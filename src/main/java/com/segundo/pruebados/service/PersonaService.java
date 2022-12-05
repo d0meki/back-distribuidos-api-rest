@@ -3,6 +3,9 @@ package com.segundo.pruebados.service;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +20,8 @@ public class PersonaService implements IPersonaService {
 
     @Autowired
     private IPersona data;
+    @PersistenceContext
+    private EntityManager em;
 
     @Override
     public List<Persona> listar() {
@@ -47,6 +52,18 @@ public class PersonaService implements IPersonaService {
         try {
             data.deleteById(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @Override
+    public ResponseEntity<List<Persona>> buscarPorCi(String ci) {
+        try {
+            List<Persona> p = em.createNativeQuery("SELECT*FROM persona WHERE persona.ci = :ci",Persona.class)
+            .setParameter("ci", ci)
+            .getResultList();
+            return new ResponseEntity<List<Persona>>(p, HttpStatus.ACCEPTED);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
