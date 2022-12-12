@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.segundo.pruebados.InterfaceService.IDetalleDeudaService;
+import com.segundo.pruebados.model.Detalle;
 import com.segundo.pruebados.model.DetalleDeuda;
 
 @RestController
@@ -28,5 +29,9 @@ public class DetalleDeudaController {
     @GetMapping(value = "/detalle-id/{id}")
     public ResponseEntity<List<DetalleDeuda>> getDeuda(@PathVariable("id") int id){
         return service.getDetalles(id);
+    }
+    @GetMapping(value = "/detalle-id-join/{id}")
+    public ResponseEntity<List<Detalle>> getDeudaJoin(@PathVariable("id") int id){
+        return service.getDetallesJoin(id);
     }
 }

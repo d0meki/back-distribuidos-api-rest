@@ -11,6 +11,7 @@ import com.segundo.pruebados.model.Deuda;
 public interface IDeudaService {
     public ResponseEntity<Deuda> create(Deuda deuda);
     public ResponseEntity<List<Deuda>> buscar(int id);
+    public ResponseEntity<List<Deuda>> historial(int id);
     public Optional<Deuda> editar(Deuda deuda);
     public List<Deuda> listar();
 }

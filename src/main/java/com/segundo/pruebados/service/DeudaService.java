@@ -52,7 +52,19 @@ public class DeudaService implements IDeudaService {
     @Override
     public ResponseEntity<List<Deuda>> buscar(int id) {
         try {
-            List<Deuda> d = em.createNativeQuery("SELECT*FROM deudas WHERE deudas.persona_id = :id",Deuda.class)
+            List<Deuda> d = em.createNativeQuery("SELECT*FROM deudas WHERE deudas.persona_id = :id AND deudas.pagado = FALSE",Deuda.class)
+            .setParameter("id", id)
+            .getResultList();
+            return new ResponseEntity<List<Deuda>>(d, HttpStatus.ACCEPTED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @Override
+    public ResponseEntity<List<Deuda>> historial(int id) {
+        try {
+            List<Deuda> d = em.createNativeQuery("SELECT*FROM deudas WHERE deudas.persona_id = :id AND deudas.pagado = TRUE",Deuda.class)
             .setParameter("id", id)
             .getResultList();
             return new ResponseEntity<List<Deuda>>(d, HttpStatus.ACCEPTED);

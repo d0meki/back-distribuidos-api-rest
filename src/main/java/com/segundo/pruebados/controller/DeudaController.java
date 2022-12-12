@@ -36,6 +36,9 @@ public class DeudaController {
     public ResponseEntity<List<Deuda>> getDeuda(@PathVariable("id") int id){
         return service.buscar(id);
     }
-
-
+    @GetMapping(value = "/historial/{id}")
+    public ResponseEntity<List<Deuda>> getDeudaPagada(@PathVariable("id") int id){
+        return service.historial(id);
+    }
+    
 }

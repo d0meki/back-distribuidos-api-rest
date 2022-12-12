@@ -21,7 +21,7 @@ public class Pago {
     private float monto;
 
     public Pago() {
-
+        
     }
 
     public Pago(int id, float monto,Date fecha_pago,int deuda_id, int persona_id) {
