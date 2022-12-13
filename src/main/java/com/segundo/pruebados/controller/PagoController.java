@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.segundo.pruebados.InterfaceService.IDeudaService;
 import com.segundo.pruebados.InterfaceService.IPagoService;
-import com.segundo.pruebados.model.Deuda;
 import com.segundo.pruebados.model.Pagar;
 import com.segundo.pruebados.model.Pago;
 

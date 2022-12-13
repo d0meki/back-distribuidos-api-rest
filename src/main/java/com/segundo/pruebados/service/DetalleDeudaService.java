@@ -7,22 +7,17 @@ import org.springframework.stereotype.Service;
 
 import com.segundo.pruebados.InterfaceService.IDetalleDeudaService;
 import com.segundo.pruebados.Interfaces.IDetalleDeuda;
-import com.segundo.pruebados.Interfaces.IDeuda;
 import com.segundo.pruebados.model.Detalle;
 import com.segundo.pruebados.model.DetalleDeuda;
-import com.segundo.pruebados.model.Deuda;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class DetalleDeudaService implements IDetalleDeudaService{
 
-    @Autowired
-    private IDeuda dataDeuda;
     @Autowired
     private IDetalleDeuda dataDetalleDeuda;
     @PersistenceContext
@@ -31,12 +26,6 @@ public class DetalleDeudaService implements IDetalleDeudaService{
     @Override
     public ResponseEntity<DetalleDeuda> create(DetalleDeuda detalleDeuda) {
         try {
-
-            // Optional<Deuda> deuda = dataDeuda.findById(detalleDeuda.getDeuda_id());
-            // Deuda _deuda = deuda.get();
-            // float total = _deuda.getTotal() + detalleDeuda.getMonto();
-            // _deuda.setTotal(total);
-            // dataDeuda.save(_deuda);
 
             return new ResponseEntity<DetalleDeuda>(dataDetalleDeuda.save(detalleDeuda), HttpStatus.CREATED);
 
