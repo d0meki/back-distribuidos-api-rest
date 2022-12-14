@@ -1,7 +1,7 @@
 package com.segundo.pruebados.model;
 
 public class Detalle {
-  
+
     private int id;
     private int deuda_id;
     private float monto;

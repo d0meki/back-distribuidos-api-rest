@@ -63,6 +63,7 @@ public class PersonaService implements IPersonaService {
             List<Persona> p = em.createNativeQuery("SELECT*FROM persona WHERE persona.ci = :ci",Persona.class)
             .setParameter("ci", ci)
             .getResultList();
+            
             return new ResponseEntity<List<Persona>>(p, HttpStatus.ACCEPTED);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
