@@ -13,6 +13,7 @@ import com.segundo.pruebados.InterfaceService.IDeudaService;
 import com.segundo.pruebados.InterfaceService.IPagoService;
 import com.segundo.pruebados.model.Pagar;
 import com.segundo.pruebados.model.Pago;
+import com.segundo.pruebados.model.PagoDeuda;
 
 
 
@@ -35,6 +36,10 @@ public class PagoController {
     @GetMapping(value = "/mypago/{id}")
     public ResponseEntity<Pago> getDeuda(@PathVariable("id") int id){
         return pagoService.getPago(id);
+    }
+    @GetMapping(value = "/mypagoname/{id}")
+    public ResponseEntity<PagoDeuda> getPagoName(@PathVariable("id") int id){
+        return pagoService.getPagoName(id);
     }
 
 }

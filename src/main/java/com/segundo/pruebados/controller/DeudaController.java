@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.segundo.pruebados.InterfaceService.IDeudaService;
 import com.segundo.pruebados.model.Deuda;
+import com.segundo.pruebados.model.DeudaCi;
 
 @RestController
 @RequestMapping("/deuda")
@@ -36,9 +37,17 @@ public class DeudaController {
     public ResponseEntity<List<Deuda>> getDeuda(@PathVariable("id") int id){
         return service.buscar(id);
     }
+    @GetMapping(value = "/mydeudaci/{id}")
+    public ResponseEntity<List<DeudaCi>> getDeudaPorCi(@PathVariable("id") String id){
+        return service.buscarCi(id);
+    }
     @GetMapping(value = "/historial/{id}")
     public ResponseEntity<List<Deuda>> getDeudaPagada(@PathVariable("id") int id){
         return service.historial(id);
+    }
+    @GetMapping(value = "/historialci/{id}")
+    public ResponseEntity<List<DeudaCi>> getHistorialCi(@PathVariable("id") String id){
+        return service.historialCi(id);
     }
     
     

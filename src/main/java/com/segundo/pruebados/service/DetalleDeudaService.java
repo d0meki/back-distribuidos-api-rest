@@ -70,7 +70,8 @@ public class DetalleDeudaService implements IDetalleDeudaService{
             // List<Detalle> detalleDeuda = em.createNativeQuery("SELECT detalle_deudas.id,detalle_deudas.deuda_id, detalle_deudas.monto, conceptos.descripcion FROM detalle_deudas,conceptos WHERE detalle_deudas.concepto_id=conceptos.id AND detalle_deudas.deuda_id=:id",Detalle.class)
             // .setParameter("id", deuda_id)
             // .getResultList();
-            List<Object[]> detalleDeuda = em.createNativeQuery("SELECT detalle_deudas.id,detalle_deudas.deuda_id,detalle_deudas.monto,conceptos.descripcion FROM detalle_deudas,conceptos WHERE detalle_deudas.concepto_id=conceptos.id AND detalle_deudas.deuda_id=12")
+            List<Object[]> detalleDeuda = em.createNativeQuery("SELECT detalle_deudas.id,detalle_deudas.deuda_id,detalle_deudas.monto,conceptos.descripcion FROM detalle_deudas,conceptos WHERE detalle_deudas.concepto_id=conceptos.id AND detalle_deudas.deuda_id=:id")
+            .setParameter("id", deuda_id)
             .getResultList();
             List<Detalle> lista = new ArrayList<>();   
                 for (Object[] object : detalleDeuda) {
