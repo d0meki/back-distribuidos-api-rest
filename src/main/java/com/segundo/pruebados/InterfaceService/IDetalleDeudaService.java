@@ -11,5 +11,4 @@ public interface IDetalleDeudaService {
     public ResponseEntity<DetalleDeuda> create(DetalleDeuda detalleDeuda);
     public ResponseEntity<List<DetalleDeuda>> getDetalles(int deuda_id);
     public ResponseEntity<List<Detalle>> getDetallesJoin(int deuda_id);
-    //public ResponseEntity<List<Object[]>> getDetallesJoin(int deuda_id);
 }

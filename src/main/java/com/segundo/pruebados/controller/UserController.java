@@ -18,8 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.segundo.pruebados.InterfaceService.IPersonaService;
 import com.segundo.pruebados.model.Persona;
 
-//import io.swagger.models.Model;
-
 @RestController
 @RequestMapping("/persona")
 public class UserController {

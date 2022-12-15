@@ -11,7 +11,6 @@ public class PruebadosApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PruebadosApplication.class, args);
 	}
-
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurer() {

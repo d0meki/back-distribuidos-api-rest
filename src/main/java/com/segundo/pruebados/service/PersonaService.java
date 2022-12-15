@@ -56,7 +56,6 @@ public class PersonaService implements IPersonaService {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
     @Override
     public ResponseEntity<List<Persona>> buscarPorCi(String ci) {
         try {

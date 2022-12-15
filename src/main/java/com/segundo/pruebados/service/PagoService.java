@@ -1,8 +1,5 @@
 package com.segundo.pruebados.service;
 
-
-import java.util.Date;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;

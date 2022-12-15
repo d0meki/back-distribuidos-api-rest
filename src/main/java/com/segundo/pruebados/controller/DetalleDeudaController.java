@@ -30,10 +30,6 @@ public class DetalleDeudaController {
     public ResponseEntity<List<DetalleDeuda>> getDeuda(@PathVariable("id") int id){
         return service.getDetalles(id);
     }
-    // @GetMapping(value = "/detalle-id-join/{id}")
-    // public ResponseEntity<List<Detalle>> getDeudaJoin(@PathVariable("id") int id){
-    //     return service.getDetallesJoin(id);
-    // }
     
     @GetMapping(value = "/detalle-id-join/{id}")
     public ResponseEntity<List<Detalle>> getDeudaJoin(@PathVariable("id") int id){
