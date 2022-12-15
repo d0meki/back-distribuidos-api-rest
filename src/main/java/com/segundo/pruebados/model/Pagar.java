@@ -4,7 +4,10 @@ public class Pagar {
 
     private Pago pago;
     private Deuda deuda;
-
+    public Pagar(){
+        this.pago = null;
+        this.deuda = null;
+    }
     public Pagar(Pago pago, Deuda deuda) {
         this.pago = pago;
         this.deuda = deuda;
